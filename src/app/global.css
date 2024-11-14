@@ -412,166 +412,88 @@ a:hover {
   margin-top: 10px;
 }
 
-/* Footer Styles */
 .footer {
-  background-color: #f8f9fa;
-  padding: 40px 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 20px 0; /* Reduce padding for a slimmer footer */
+  width: 100vw; /* Full page width */
 }
 
 .footer-grid {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ddd;
+  justify-content: space-around; /* Spread content evenly */
+  padding: 20px 40px; /* Adjust padding for more spacing */
+  width: 100%;
 }
 
-.footer-logo {
-  flex: 1;
-}
-
-.footer-home {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 150px;
+.footer-section,
+.footer-logo,
+.footer-subscribe {
+  flex: 1; /* Make sections flexible */
+  padding: 10px;
 }
 
 .footer-heading {
+  font-size: 1.2rem; /* Increase heading font size */
   font-weight: bold;
-  margin-bottom: 15px;
 }
 
 .footer-section ul {
-  list-style: none;
+  list-style-type: none; /* Remove default list styling */
   padding: 0;
   margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+  font-size: 1rem; /* Increase font size of list items */
+  line-height: 1.6; /* Adjust line height for better readability */
 }
 
 .footer-section ul li a {
-  color: #333;
+  color: #fff; /* White text color for links */
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-subscribe p {
-  margin-bottom: 10px;
-}
-
-.subscribe-container {
-  display: flex;
-  align-items: center;
-}
-
-.subscribe-container input[type="email"] {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px 0 0 4px;
-  flex: 1;
-}
-
-.subscribe-container button {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.subscribe-container button:hover {
-  background-color: #0056b3;
-}
-
-.subscribe-success {
-  color: green;
-  margin-top: 10px;
-  font-size: 14px;
+  color: #a2c8df; /* Highlight color on hover */
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.footer-bottom p {
-  margin: 0;
-  color: #666;
-}
-
-.footer-bottom a {
-  color: #666;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration: underline;
+  padding: 10px 40px; /* Adjust bottom padding */
+  width: 100%;
+  border-top: 1px solid #444; /* Divider line */
 }
 
 .social-links {
+  list-style: none;
   display: flex;
   gap: 15px;
 }
 
-.social-links li {
-  list-style: none;
+.social-links li a {
+  color: #fff;
+  font-size: 20px; /* Icon size */
+  transition: color 0.3s;
 }
 
-.social-links a {
-  color: #666;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.social-links a:hover {
-  color: #333;
+.social-links li a:hover {
+  color: #1da1f2; /* Highlight color on hover (Twitter blue as an example) */
 }
 
 .footer-terms {
-  display: flex;
-  gap: 5px;
+  color: #ffffff;
 }
 
 .footer-terms a {
-  color: #666;
+  color: #ffffff;
+  margin: 0 5px;
   text-decoration: none;
 }
 
 .footer-terms a:hover {
-  text-decoration: underline;
-}
-
-.social-links a {
-  color: #666;
-  font-size: 24px;
-  margin-right: 15px;
-  text-decoration: none;
-}
-
-.social-links a:hover {
-  color: #333;
+  color: #fff;
 }

@@ -2,13 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 
-const API_KEY = "0ea2bdb2e0714ed0a010339f866ae4b0";
-const url = "https://newsapi.org/v2/everything?q=";
-
-function App() {
+function News() {
   const [articles, setArticles] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedNav, setSelectedNav] = useState("Technology");
+  const [selectedNav, setSelectedNav] = useState("waste"); // Default category
 
   useEffect(() => {
     fetchNews(selectedNav);
@@ -16,7 +13,7 @@ function App() {
 
   const fetchNews = async (query) => {
     try {
-      const res = await fetch(`${url}${encodeURIComponent(query)}&apiKey=${API_KEY}`);
+      const res = await fetch(`/api/news?q=${encodeURIComponent(query)}`);
       const data = await res.json();
       console.log("API Response:", data); // Log the API response to inspect it
       if (data && data.articles) {
@@ -27,17 +24,17 @@ function App() {
       }
     } catch (error) {
       console.error("Error fetching news:", error);
+      setArticles([]); // Clear articles on error
     }
   };
 
   const handleNavItemClick = (category) => {
     setSelectedNav(category);
-    fetchNews(category);
   };
 
   const handleSearch = () => {
     if (!searchQuery) return;
-    setSelectedNav(null);
+    setSelectedNav(searchQuery); // Set search query as the selected category
     fetchNews(searchQuery);
   };
 
@@ -50,24 +47,15 @@ function App() {
           </a>
           <div className="nav-links">
             <ul className="flex">
-              <li
-                className={`hover-link nav-item ${selectedNav === "waste" ? "active" : ""}`}
-                onClick={() => handleNavItemClick("waste")}
-              >
-                WASTE
-              </li>
-              <li
-                className={`hover-link nav-item ${selectedNav === "ewaste" ? "active" : ""}`}
-                onClick={() => handleNavItemClick("ewaste")}
-              >
-                EWASTE
-              </li>
-              <li
-                className={`hover-link nav-item ${selectedNav === "recycle" ? "active" : ""}`}
-                onClick={() => handleNavItemClick("recycle")}
-              >
-                RECYCLE
-              </li>
+              {["waste", "ewaste", "recycle"].map(category => (
+                <li
+                  key={category}
+                  className={`hover-link nav-item ${selectedNav === category ? "active" : ""}`}
+                  onClick={() => handleNavItemClick(category)}
+                >
+                  {category.toUpperCase()}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="search-bar flex">
@@ -113,4 +101,4 @@ function App() {
   );
 }
 
-export default App;
+export default News;
