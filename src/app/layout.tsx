@@ -20,9 +20,6 @@ export default function RootLayout({ children }: LayoutProps) {
           <h1 style={{ textAlign: 'center', color: 'green' }}>My E-Waste Locator App</h1>
         </header>
         <main>{children}</main>
-        <footer>
-          <p>© 2024 E-Waste Locator</p>
-        </footer>
       </body>
     </html>
   );
