@@ -30,9 +30,10 @@ const Navbar = () => {
             <Link href="/education" className="text-gray-600 hover:text-green-600 transition-colors">
               Education
             </Link>
-            <Link href="/recycle" className="text-gray-600 hover:text-green-600 transition-colors">
+            <Link href="/Recycle" className="text-gray-600 hover:text-green-600 transition-colors">
               Recycle
             </Link>
+
             <Link href="/news" className="text-gray-600 hover:text-green-600 transition-colors">
               News
             </Link>
