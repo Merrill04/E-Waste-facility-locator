@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Navbar from "@/components/Navbar"; // Add Navbar import
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -19,41 +19,44 @@ const Signup = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>
-        Already have an account?{" "}
-        <a href="/signin">Sign In</a>
-      </p>
-      <div className="social-signin">
-        <button className="google-signin">Sign in with Google</button>
-        <button className="facebook-signin">Sign in with Facebook</button>
+    <>
+      <Navbar /> {/* Add Navbar component */}
+      <div className="form-container">
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSignup}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>
+          Already have an account?{" "}
+          <a href="/signin">Sign In</a>
+        </p>
+        <div className="social-signin">
+          <button className="google-signin">Sign in with Google</button>
+          <button className="facebook-signin">Sign in with Facebook</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

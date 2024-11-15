@@ -12,7 +12,7 @@ function Card() {
           </p>
           <a
             className="btn text-white p-3 bg-blue-600 hover:bg-blue-700 w-min rounded-md"
-            href="storepage">
+            href="./recycle">
             Dispose
           </a>
         </div>

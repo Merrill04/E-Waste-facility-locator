@@ -2,9 +2,11 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'; // Adjust this path according to your folder structure
 import Card from '../components/Card.jsx';
 import EwasteInfoComponent from '../components/EwasteInfoComponent';
+
 
 
 export default function HomePage() {
@@ -21,28 +23,35 @@ export default function HomePage() {
 
   return (
     <div>
-      <nav className="navbar">
-        <div>
-          <a href="#awareness">Awareness</a>
-          <a href="#facilities">E-Facilities</a>
-          <a href="/news">News</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <Link href="/signup">
-          <button className="signup-button">Sign Up</button>
-        </Link>
-      </nav>
+      <Navbar />
 
-      <h2 className="text-4xl font-bold centered-paragraph">E-Waste Recycling and Facility Locator</h2>
-      <p id="info-paragraph" className="text-1xl centered-paragraph" style={{ opacity: 0 }}>
-        E-waste recycling and management are essential processes for handling the growing volume of electronic waste generated worldwide.
-        As technology advances, electronic devices are rapidly discarded, resulting in significant environmental hazards due to harmful substances
-        like lead, mercury, and cadmium in these products. Proper e-waste recycling involves collecting, sorting, and processing used electronics to
-        recover valuable materials, such as metals and plastics, which can be reused in manufacturing. Effective management also reduces pollution,
-        conserves natural resources, and minimizes the energy required for producing new materials.Educating the public about safe disposal practices
-        is crucial for fostering a sustainable approach to managing electronic waste.
-      </p>
+      <h2 className="text-4xl font-bold text-center py-2">
+        E-Waste Recycling and Facility Locator
+      </h2>
+
+      {/* Hero Section with side-by-side layout */}
+      <div className="w-full mx-auto px-4 flex flex-col md:flex-row gap-4 items-center">
+        {/* Image aligned to the left */}
+        <div className="md:w-1/3 flex justify-center md:justify-start">
+          <img
+            src="/assets/Ewaste.jpg"
+            alt="E-waste recycling"
+            className="rounded-lg shadow-lg w-full max-w-sm h-auto object-cover"
+          />
+        </div>
+
+        {/* Text content centered */}
+        <div className="md:w-2/3 flex justify-center md:justify-center">
+          <p className="text-lg text-center md:text-left">
+            E-waste recycling and management are essential processes for handling the growing volume of electronic waste generated worldwide.
+            As technology advances, electronic devices are rapidly discarded, resulting in significant environmental hazards due to harmful substances
+            like lead, mercury, and cadmium in these products. Proper e-waste recycling involves collecting, sorting, and processing used electronics
+            to recover valuable materials, such as metals and plastics, which can be reused in manufacturing. Effective management also reduces pollution,
+            conserves natural resources, and minimizes the energy required for producing new materials. Educating the public about safe disposal practices
+            is crucial for fostering a sustainable approach to managing electronic waste.
+          </p>
+        </div>
+      </div>
 
       {/* Types of E-waste Section */}
       <section className="e-waste-types py-8">
